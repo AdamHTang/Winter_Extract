@@ -17,6 +17,7 @@ TagManager:
   - SmokeTrail
   - Spawner
   - GunFlash
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Bullet
+  - Player
   - Enemy
   - 
   - 

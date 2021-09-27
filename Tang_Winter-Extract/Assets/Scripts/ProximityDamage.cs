@@ -12,7 +12,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProxyDamage : MonoBehaviour
+public class ProximityDamage : MonoBehaviour
 {
     // Variables //
     public float DamageRate = 10f;  // Damage per second.
