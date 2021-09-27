@@ -55,4 +55,21 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+    void EnableFire()
+    {
+        CanFire = true;
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown(FireAxis) && CanFire)
+        {
+            foreach (Transform T in TurretTransforms)
+            {
+                AmmoManager.SpawnAmmo(T.position, T.rotation);
+            }
+            CanFire = false;
+            Invoke("EnableFire", ReloadDelay);
+        }
+    }
 }
