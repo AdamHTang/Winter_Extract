@@ -17,9 +17,16 @@ public class Ammo : MonoBehaviour
     // Variables //
     public float Damage = 100f;
     public float LifeTime = 2f;
+    public AudioSource bulletSource = null;
+
+    void Awake()
+    {
+        bulletSource = GetComponent<AudioSource>();
+    }
 
     private void OnEnable()
     {
+        bulletSource.Play();
         CancelInvoke();
         Invoke("Die", LifeTime);
 

@@ -29,11 +29,15 @@ public class PlayerController : MonoBehaviour
     public Transform[] TurretTransforms;
     public int magSize = 20;
     private int bulletsLeft = 20;
+    private bool isMoving = false;
+
+    public AudioSource playerSource = null;
 
     /* Awake - Call before game start*/
     private void Awake()
     {
         ThisBody = GetComponent<Rigidbody>();        // Sets the object's rigidbody to a variable called playerRB.
+        playerSource = GetComponent<AudioSource>();
     }   // End Awake()
 
 
@@ -42,7 +46,16 @@ public class PlayerController : MonoBehaviour
         moveDirection.x= Input.GetAxisRaw(horzAxis);
         moveDirection.z= Input.GetAxisRaw(vertAxis);
 
-        ThisBody.MovePosition(ThisBody.position + (moveDirection.normalized * speed));  
+        ThisBody.MovePosition(ThisBody.position + (moveDirection.normalized * speed));
+        if (ThisBody.position != ThisBody.position + (moveDirection.normalized * speed)){
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
+
+
 
         if (mouseLook)
         {
@@ -64,6 +77,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (isMoving && !playerSource.isPlaying)
+        {
+
+            playerSource.Play();
+        }
+
         if (Input.GetButtonDown(FireAxis) && CanFire && bulletsLeft == 0 || Input.GetKeyDown(KeyCode.R))
         {
             CanFire = false;
