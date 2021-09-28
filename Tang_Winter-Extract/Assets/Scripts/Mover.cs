@@ -15,7 +15,15 @@ public class Mover : MonoBehaviour
 {
     // Variable //
     public float MaxSpeed = 10f;
+    public bool randomSpeed = false;
 
+    void Awake()
+    {
+        if (randomSpeed)
+        {
+            MaxSpeed = Random.Range(2.0f, 7.5f);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()

@@ -23,9 +23,12 @@ public class PlayerController : MonoBehaviour
     Vector3 moveDirection;
 
     public string FireAxis = "Fire1";
-    public float ReloadDelay = 0.0f;
+    public float fireDelay = 0.0f;
+    public float reloadDelay = 1.0f;
     public bool CanFire = true;
     public Transform[] TurretTransforms;
+    public int magSize = 20;
+    private int bulletsLeft = 20;
 
     /* Awake - Call before game start*/
     private void Awake()
@@ -38,7 +41,6 @@ public class PlayerController : MonoBehaviour
     {
         moveDirection.x= Input.GetAxisRaw(horzAxis);
         moveDirection.z= Input.GetAxisRaw(vertAxis);
-    
 
         ThisBody.MovePosition(ThisBody.position + (moveDirection.normalized * speed));  
 
@@ -62,14 +64,21 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown(FireAxis) && CanFire)
+        if (Input.GetButtonDown(FireAxis) && CanFire && bulletsLeft == 0 || Input.GetKeyDown(KeyCode.R))
+        {
+            CanFire = false;
+            Invoke("EnableFire", reloadDelay);
+            bulletsLeft = magSize;
+        }
+        else if (Input.GetButtonDown(FireAxis) && CanFire && bulletsLeft != 0)
         {
             foreach (Transform T in TurretTransforms)
             {
                 AmmoManager.SpawnAmmo(T.position, T.rotation);
             }
+            bulletsLeft--;
             CanFire = false;
-            Invoke("EnableFire", ReloadDelay);
+            Invoke("EnableFire", fireDelay);
         }
     }
 }

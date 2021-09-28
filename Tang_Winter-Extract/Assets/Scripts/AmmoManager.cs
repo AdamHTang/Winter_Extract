@@ -48,4 +48,5 @@ public class AmmoManager : MonoBehaviour
         AmmoManagerSingleton.AmmoQueue.Enqueue(SpawnedAmmo);
         return SpawnedAmmo;
     }
+
 }
