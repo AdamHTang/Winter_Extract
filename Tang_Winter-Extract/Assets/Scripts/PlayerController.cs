@@ -3,7 +3,7 @@
  *  Date Created: Sept 26, 2021
  *  
  *  Last Edited by:
- *  Last Updated: Sept 26, 2021
+ *  Last Updated: Sept 28, 2021
  *  
  *  Description: Player Controller that controls movement and shooting.
  */
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     public bool CanFire = true;
     public Transform[] TurretTransforms;
     public int magSize = 20;
-    private int bulletsLeft = 20;
+    private int bulletsLeft;
     private bool isMoving = false;
 
     public AudioSource playerSource = null;
@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         ThisBody = GetComponent<Rigidbody>();        // Sets the object's rigidbody to a variable called playerRB.
+        bulletsLeft = magSize;
         playerSource = GetComponent<AudioSource>();
     }   // End Awake()
 
@@ -99,5 +100,10 @@ public class PlayerController : MonoBehaviour
             CanFire = false;
             Invoke("EnableFire", fireDelay);
         }
+    }
+
+    public int getAmmo()
+    {
+        return bulletsLeft;
     }
 }

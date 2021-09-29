@@ -179,6 +179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 531794842}
+  - component: {fileID: 531794844}
   - component: {fileID: 531794843}
   m_Layer: 7
   m_Name: Turret
@@ -211,9 +212,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 75c4f8016e5fc4dcfb4f25c44d028620, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bf1a5dc9354f86e409a2e6e64a329725, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -297,6 +298,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &531794844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531794841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2270f215dac37b945a623fdf524694b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reloadSource: {fileID: 531794843}
+  playerCon: {fileID: 1712465933}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,7 +715,7 @@ MonoBehaviour:
   speed: 0.1
   FireAxis: Fire1
   fireDelay: 0.1
-  reloadDelay: 2
+  reloadDelay: 3
   CanFire: 1
   TurretTransforms:
   - {fileID: 531794842}
@@ -718,7 +733,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5072fa12b63db4331a878a63181522aa, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
