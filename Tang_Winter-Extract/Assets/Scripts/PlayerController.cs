@@ -2,8 +2,8 @@
  *  Created by: Adam Tang
  *  Date Created: Sept 26, 2021
  *  
- *  Last Edited by:
- *  Last Updated: Sept 28, 2021
+ *  Last Edited by: Adam Tang
+ *  Last Updated: Sept 29, 2021
  *  
  *  Description: Player Controller that controls movement and shooting.
  */
@@ -107,4 +107,9 @@ public class PlayerController : MonoBehaviour
     {
         return bulletsLeft;
     } // End getAmmo()
+
+    void OnDestroy()
+    {
+        GameManager.IsPlayerDead = true;
+    }
 }
