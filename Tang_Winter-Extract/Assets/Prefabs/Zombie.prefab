@@ -82,9 +82,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _HealthPoints: 100
   DestroyOnDeath: 1
-  DeathPrefab: {fileID: 0}
-  DeathSound: {fileID: 8300000, guid: 45846806814117c4e8264a03a020f6c4, type: 3}
-  soundSource: {fileID: 0}
+  DeathPrefab: {fileID: 7082243266211248466, guid: fcd40018f208b8647ba7bd37025bac5b,
+    type: 3}
 --- !u!114 &4290504689275486220
 MonoBehaviour:
   m_ObjectHideFlags: 0
