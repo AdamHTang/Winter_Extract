@@ -24,14 +24,14 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         ThisInstance = this;
-    }
+    } // End Awake()
     void Update()
     {
         if (ScoreText != null)
         {
             ScoreText.text = ScorePrefix + Score.ToString();
         }
-    }
+    } // End Update()
     public static void GameOver()
     {
         if (ThisInstance.GameOverText != null)
@@ -39,6 +39,6 @@ public class GameController : MonoBehaviour
             ThisInstance.GameOverText.gameObject.
             SetActive(true);
         }
-    }
+    } // End GameOver()
 
 }

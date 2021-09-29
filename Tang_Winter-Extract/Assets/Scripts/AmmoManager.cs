@@ -3,7 +3,7 @@
  *  Date Created: Sept 22, 2021
  *  
  *  Last Edited by:
- *  Last Updated: Sept 22, 2021
+ *  Last Updated: Sept 28, 2021
  *  
  *  Description: AmmoManager manages the pool of ammo.
  */
@@ -19,6 +19,7 @@ public class AmmoManager : MonoBehaviour
     public int PoolSize = 100;
     public Queue<Transform> AmmoQueue = new Queue<Transform>();
     private GameObject[] AmmoArray;
+
     void Awake()
     {
         if (AmmoManagerSingleton != null)
@@ -36,7 +37,7 @@ public class AmmoManager : MonoBehaviour
             AmmoQueue.Enqueue(ObjTransform);
             AmmoArray[i].SetActive(false);
         }
-    }
+    } // End Awake()
     public static Transform SpawnAmmo(Vector3 Position,
     Quaternion Rotation)
     {
@@ -47,6 +48,6 @@ public class AmmoManager : MonoBehaviour
         SpawnedAmmo.localRotation = Rotation;
         AmmoManagerSingleton.AmmoQueue.Enqueue(SpawnedAmmo);
         return SpawnedAmmo;
-    }
+    } // End SpawnAmmo()
 
 }

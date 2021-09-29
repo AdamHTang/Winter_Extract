@@ -3,7 +3,7 @@
  *  Date Created: Sept 20, 2021
  *  
  *  Last Edited by:
- *  Last Updated: Sept 26, 2021
+ *  Last Updated: Sept 28, 2021
  *  
  *  Description: Game object health
  */
@@ -47,9 +47,10 @@ public class Health : MonoBehaviour
     void Update()
     {
         //Debug Health Test
-        if (Input.GetKeyDown(KeyCode.Space))
+        /* if (Input.GetKeyDown(KeyCode.Space))
         {
             HealthPoints = 0;
         } // End Debug
-    }
+        */ 
+    } // End Update()
 }

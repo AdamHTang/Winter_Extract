@@ -3,7 +3,7 @@
  *  Date Created: Sept 22, 2021
  *  
  *  Last Edited by:
- *  Last Updated: Sept 22, 2021
+ *  Last Updated: Sept 28, 2021
  *  
  *  Description: Controls ammo damage
  */
@@ -22,7 +22,7 @@ public class Ammo : MonoBehaviour
     void Awake()
     {
         bulletSource = GetComponent<AudioSource>();
-    }
+    } // End Awake()
 
     private void OnEnable()
     {
@@ -42,6 +42,6 @@ public class Ammo : MonoBehaviour
     void Die()
     {
         gameObject.SetActive(false);
-    }
+    } // End Die()
 
 }

@@ -18,4 +18,4 @@ public class ScoreOnDestroy : MonoBehaviour
     {
         GameController.Score += ScoreValue;
     }
-}
+} // End ScoreOnDestroy

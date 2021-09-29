@@ -24,11 +24,13 @@ public class Spawner : MonoBehaviour
     {
         Origin = GameObject.FindGameObjectWithTag
         ("Player").transform;
-    }
+    } // End Awake()
+
     void Start()
     {
         InvokeRepeating("Spawn", 0f, Interval);
-    }
+    } // End Start()
+
     void Spawn()
     {
         if (Origin == null)
@@ -40,5 +42,5 @@ public class Spawner : MonoBehaviour
         SpawnPos = new Vector3(SpawnPos.x, 0f, SpawnPos.z);
         Instantiate(ObjToSpawn, SpawnPos, Quaternion.
         identity);
-    }
+    }   // End Spawn()
 }

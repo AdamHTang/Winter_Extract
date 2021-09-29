@@ -27,9 +27,10 @@ public class PlayerController : MonoBehaviour
     public float reloadDelay = 1.0f;
     public bool CanFire = true;
     public Transform[] TurretTransforms;
-    public int magSize = 20;
-    private int bulletsLeft;
-    private bool isMoving = false;
+
+    public int magSize = 20;            // Determines max ammo size for the player.
+    private int bulletsLeft;            // Keeps count of number of bullets the player has at the moment.
+    private bool isMoving = false;      // Keeps track of the player moving and not moving.
 
     public AudioSource playerSource = null;
 
@@ -69,12 +70,12 @@ public class PlayerController : MonoBehaviour
             transform.localRotation = Quaternion.LookRotation(lookDirection.normalized, Vector3.up);
 
         }
-
     }
+
     void EnableFire()
     {
         CanFire = true;
-    }
+    } // End EnableFire()
 
     private void Update()
     {
@@ -100,10 +101,10 @@ public class PlayerController : MonoBehaviour
             CanFire = false;
             Invoke("EnableFire", fireDelay);
         }
-    }
+    } // End Update()
 
-    public int getAmmo()
+    public int getAmmo()        // returns the number of bullets that the player currently has.
     {
         return bulletsLeft;
-    }
+    } // End getAmmo()
 }

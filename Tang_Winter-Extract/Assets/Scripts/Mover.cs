@@ -3,7 +3,7 @@
  *  Date Created: Sept 20, 2021
  *  
  *  Last Edited by:
- *  Last Updated: Sept 20, 2021
+ *  Last Updated: Sept 26, 2021
  *  
  *  Description: Continuously move gameObject.
  */
@@ -15,7 +15,7 @@ public class Mover : MonoBehaviour
 {
     // Variable //
     public float MaxSpeed = 10f;
-    public bool randomSpeed = false;
+    public bool randomSpeed = false;    // Allow for variable speed between a certain range.
 
     void Awake()
     {
@@ -23,13 +23,7 @@ public class Mover : MonoBehaviour
         {
             MaxSpeed = Random.Range(2.0f, 7.5f);
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    } // End Awake()
 
     // Update is called once per frame
     void Update()
