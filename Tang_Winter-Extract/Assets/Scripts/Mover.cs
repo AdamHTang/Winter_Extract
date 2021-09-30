@@ -3,7 +3,7 @@
  *  Date Created: Sept 20, 2021
  *  
  *  Last Edited by:
- *  Last Updated: Sept 26, 2021
+ *  Last Updated: Sept 29, 2021
  *  
  *  Description: Continuously move gameObject.
  */
@@ -21,7 +21,7 @@ public class Mover : MonoBehaviour
     {
         if (randomSpeed)
         {
-            MaxSpeed = Random.Range(1.0f, MaxSpeed);
+            MaxSpeed = Random.Range(2.5f, MaxSpeed);
         }
     } // End Awake()
 
