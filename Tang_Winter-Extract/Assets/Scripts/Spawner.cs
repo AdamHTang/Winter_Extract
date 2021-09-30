@@ -16,19 +16,33 @@ public class Spawner : MonoBehaviour
 {
 
     public float MaxRadius = 1f;
-    public float Interval = 5f;
+    public float lowerInterval = 5f;
+    public float upperInterval = 10f;
+    public float fixedInterval = 1.0f;
+    public bool randomInterval = false;
     public GameObject ObjToSpawn = null;
     private Transform Origin = null;
+    public bool spawnOnPlayer = false;
 
     void Awake()
     {
-        Origin = GameObject.FindGameObjectWithTag
-        ("Player").transform;
+        if (spawnOnPlayer) {
+            Origin = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        else
+        {
+            Origin = transform;
+        }
+
     } // End Awake()
 
     void Start()
     {
-        InvokeRepeating("Spawn", 0f, Interval);
+        if (randomInterval)
+        {
+            fixedInterval = Random.RandomRange(lowerInterval, upperInterval);
+        }
+        InvokeRepeating("Spawn", 0f, fixedInterval);
     } // End Start()
 
     void Spawn()

@@ -64,6 +64,10 @@ public class GameManager : MonoBehaviour
         {
             HealthText.text = "+" + Player.GetComponent<Health>().getHealthPoints().ToString("F0");
         }
+        else
+        {
+            HealthText.text = "+" + "0";
+        }
 
 
         if (AmmoText != null && GameObject.Find("Player") != null)

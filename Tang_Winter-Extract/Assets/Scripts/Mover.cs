@@ -21,7 +21,7 @@ public class Mover : MonoBehaviour
     {
         if (randomSpeed)
         {
-            MaxSpeed = Random.Range(2.0f, 7.5f);
+            MaxSpeed = Random.Range(1.0f, MaxSpeed);
         }
     } // End Awake()
 
