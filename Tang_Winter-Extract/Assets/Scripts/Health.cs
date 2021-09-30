@@ -53,4 +53,9 @@ public class Health : MonoBehaviour
         } // End Debug
         */ 
     } // End Update()
+
+    public float getHealthPoints()
+    {
+        return _HealthPoints;
+    }
 }

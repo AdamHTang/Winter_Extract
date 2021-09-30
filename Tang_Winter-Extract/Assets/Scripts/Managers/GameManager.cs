@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
     public string ScorePrefix = string.Empty;
     public TMP_Text ScoreText = null;
     public TMP_Text GameOverText = null;
+    public TMP_Text HealthText = null;
+    public TMP_Text AmmoText = null;
     public GameObject Player = null;
     public static bool IsPlayerDead = false;
 
@@ -58,11 +60,17 @@ public class GameManager : MonoBehaviour
             ScoreText.text = ScorePrefix + Score.ToString();
         }
 
-        
-        if (IsPlayerDead)
+        if (HealthText != null && GameObject.Find("Player") != null)
         {
-            GameOver();
+            HealthText.text = "+" + Player.GetComponent<Health>().getHealthPoints().ToString("F0");
         }
+
+
+        if (AmmoText != null && GameObject.Find("Player") != null)
+        {
+            AmmoText.text = "|" + Player.GetComponent<PlayerController>().getAmmo().ToString();
+        }
+
     } // End Update()
 
     public static void GameOver()
@@ -70,6 +78,7 @@ public class GameManager : MonoBehaviour
         if (gm.GameOverText != null)
         {
             gm.GameOverText.gameObject.SetActive(true);
+
         }
     } // End GameOver()
 
