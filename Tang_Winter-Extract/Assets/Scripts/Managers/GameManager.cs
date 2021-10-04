@@ -2,7 +2,7 @@
  * Created By: Adam Tang
  * Created On : Sept 29, 2021
  * Last Edited By:
- * Last Updated: Sept 29, 2021
+ * Last Updated: Oct 4, 2021
  * 
  * Description: Game manager to control global game behaviors.
  * 
@@ -39,17 +39,26 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public static int Score;
+    public float timeRemaining = 120.0f;
     public string ScorePrefix = string.Empty;
     public TMP_Text ScoreText = null;
     public TMP_Text GameOverText = null;
     public TMP_Text HealthText = null;
     public TMP_Text AmmoText = null;
+    public TMP_Text WinText = null;
+    public TMP_Text TimerText = null;
     public GameObject Player = null;
     public static bool IsPlayerDead = false;
+
+    private static int minutes;
+    private static float seconds;
 
     void Awake()
     {
         CheckGameManagerIsInScene();
+        minutes = (int)(timeRemaining / 60);
+        seconds = (timeRemaining % 60);
+        
     } // End Awake()
 
     // Update is called once per frame
@@ -75,7 +84,24 @@ public class GameManager : MonoBehaviour
             AmmoText.text = "|" + Player.GetComponent<PlayerController>().getAmmo().ToString();
         }
 
+        if (timeRemaining <= 0)
+        {
+            YouWin();
+        }
+
+
     } // End Update()
+
+    void FixedUpdate()
+    {
+        if (timeRemaining > 0 && Player.GetComponent<Health>().getHealthPoints() > 0.0f)
+        {
+            timeRemaining -= Time.fixedDeltaTime;
+            minutes = (int)(timeRemaining / 60);
+            seconds = (timeRemaining % 60);
+            TimerText.text = minutes + ":" + seconds.ToString("00");
+        }
+    }
 
     public static void GameOver()
     {
@@ -86,4 +112,11 @@ public class GameManager : MonoBehaviour
         }
     } // End GameOver()
 
+    public static void YouWin()
+    {
+        if (gm.WinText != null)
+        {
+            gm.WinText.gameObject.SetActive(true);
+        }
+    }
 }
