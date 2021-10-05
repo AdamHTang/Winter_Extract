@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.14610182, g: 0.2135386, b: 0.2264151, a: 1}
+  m_AmbientSkyColor: {r: 0.5573336, g: 0.5872908, b: 0.5943396, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -14084,7 +14084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b57588e9bbdee284394a390ff76b8139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 62
+  timeRemaining: 119
   ScorePrefix: 'Score: '
   ScoreText: {fileID: 829055859}
   GameOverText: {fileID: 1156836954}

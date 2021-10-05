@@ -13,6 +13,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        DontDestroyOnLoad(this);
+        
     }
     #endregion
 
@@ -118,6 +119,13 @@ public class GameManager : MonoBehaviour
         if (gm.WinText != null)
         {
             gm.WinText.gameObject.SetActive(true);
+            gm.Invoke("newLevel", 5.0f);
         }
+    }
+
+    [System.Obsolete]
+    void newLevel()
+    {
+        SceneManager.LoadScene("Level_2");
     }
 }

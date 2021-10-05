@@ -13148,7 +13148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b57588e9bbdee284394a390ff76b8139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 62
+  timeRemaining: 5
   ScorePrefix: 'Score: '
   ScoreText: {fileID: 182046968}
   GameOverText: {fileID: 1891577818}
