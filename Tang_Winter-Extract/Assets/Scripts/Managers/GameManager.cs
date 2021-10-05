@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text TimerText = null;
     public GameObject Player = null;
     public static bool IsPlayerDead = false;
+    
 
     private static int minutes;
     private static float seconds;

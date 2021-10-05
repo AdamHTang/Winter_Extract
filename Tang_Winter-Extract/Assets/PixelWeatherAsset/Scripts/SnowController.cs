@@ -32,6 +32,7 @@ public class SnowController : MonoBehaviour
 
     public Material snowMat;
 
+    [System.Obsolete]
     void Awake()
     {
         snowTransform = snowPart.transform;
@@ -44,11 +45,13 @@ public class SnowController : MonoBehaviour
         UpdateAll();
     }
 
+    [System.Obsolete]
     void Update(){
         if (autoUpdate)
             UpdateAll();
     }
 
+    [System.Obsolete]
     void UpdateAll(){
         snowEmission.rate = 110f * masterIntensity * snowIntensity;
         snowShape.radius = 30f * Mathf.Clamp(windIntensity, 0.4f, 1f) * masterIntensity;
@@ -60,26 +63,35 @@ public class SnowController : MonoBehaviour
         snowMat.SetFloat("_SnowLevel", snowLevel);
     }
 
+    [System.Obsolete]
     public void OnMasterChanged(float value)
     {
         masterIntensity = value;
         UpdateAll();
     }
+
+    [System.Obsolete]
     public void OnSnowChanged(float value)
     {
         snowIntensity = value;
         UpdateAll();
     }
+
+    [System.Obsolete]
     public void OnWindChanged(float value)
     {
         windIntensity = value;
         UpdateAll();
     }
+
+    [System.Obsolete]
     public void OnFogChanged(float value)
     {
         fogIntensity = value;
         UpdateAll();
     }
+
+    [System.Obsolete]
     public void OnSnowLevelChanged(float value)
     {
         snowLevel = value;

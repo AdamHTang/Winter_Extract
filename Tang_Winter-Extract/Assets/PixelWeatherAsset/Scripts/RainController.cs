@@ -30,6 +30,7 @@ public class RainController : MonoBehaviour
     private ParticleSystem.MainModule lightningMain;
     private ParticleSystem.EmissionModule fogEmission;
 
+    [System.Obsolete]
     void Awake()
     {
         rainEmission = rainPart.emission;
@@ -42,12 +43,14 @@ public class RainController : MonoBehaviour
         UpdateAll();
     }
 
+    [System.Obsolete]
     void Update()
     {
         if (autoUpdate)
             UpdateAll();
     }
 
+    [System.Obsolete]
     void UpdateAll(){
         rainEmission.rate = 200f * masterIntensity * rainIntensity;
         rainForce.x = new ParticleSystem.MinMaxCurve(-25f * windIntensity * masterIntensity, (-3-30f * windIntensity) * masterIntensity);
@@ -61,26 +64,35 @@ public class RainController : MonoBehaviour
             lightningEmission.rate = lightningIntensity * masterIntensity * 0.4f;
     }
 
+    [System.Obsolete]
     public void OnMasterChanged(float value)
     {
         masterIntensity = value;
         UpdateAll();
     }
+
+    [System.Obsolete]
     public void OnRainChanged(float value)
     {
         rainIntensity = value;
         UpdateAll();
     }
+
+    [System.Obsolete]
     public void OnWindChanged(float value)
     {
         windIntensity = value;
         UpdateAll();
     }
+
+    [System.Obsolete]
     public void OnLightningChanged(float value)
     {
         lightningIntensity = value;
         UpdateAll();
     }
+
+    [System.Obsolete]
     public void OnFogChanged(float value)
     {
         fogIntensity = value;

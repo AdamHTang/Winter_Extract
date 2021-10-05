@@ -36,6 +36,7 @@ public class Spawner : MonoBehaviour
 
     } // End Awake()
 
+    [System.Obsolete]
     void Start()
     {
         if (randomInterval)
