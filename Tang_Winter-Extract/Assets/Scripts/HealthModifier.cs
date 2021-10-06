@@ -15,7 +15,7 @@ using UnityEngine;
 public class HealthModifier : MonoBehaviour
 {
     // Variables //
-    public float HealthAddition = 25.0f; 
+    public float HealthAddition = 25.0f;
 
     private void OnTriggerStay(Collider other)
     {
@@ -32,12 +32,5 @@ public class HealthModifier : MonoBehaviour
             H.HealthPoints += HealthAddition;
         }
         Destroy(gameObject);
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

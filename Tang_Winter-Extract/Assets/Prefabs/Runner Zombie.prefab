@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5364163023114507549, guid: f89660b172bea0a409e049959c8033f6,
+        type: 3}
+      propertyPath: DamageRate
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2450025648877231948, guid: f89660b172bea0a409e049959c8033f6,
         type: 3}
       propertyPath: _HealthPoints
@@ -27,6 +32,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Runner Zombie
       objectReference: {fileID: 0}
+    - target: {fileID: 7519986051178395745, guid: f89660b172bea0a409e049959c8033f6,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e156c04c876e1b94aabecc9451951d20, type: 3}
     - target: {fileID: 8167659250090280021, guid: f89660b172bea0a409e049959c8033f6,
         type: 3}
       propertyPath: m_RootOrder

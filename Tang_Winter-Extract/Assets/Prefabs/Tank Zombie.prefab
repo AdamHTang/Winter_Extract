@@ -42,6 +42,11 @@ PrefabInstance:
       propertyPath: m_Pitch
       value: -3
       objectReference: {fileID: 0}
+    - target: {fileID: 7519986051178395745, guid: f89660b172bea0a409e049959c8033f6,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a1716dad8571094f9023ca4e4969606, type: 3}
     - target: {fileID: 8167659250090280021, guid: f89660b172bea0a409e049959c8033f6,
         type: 3}
       propertyPath: m_RootOrder

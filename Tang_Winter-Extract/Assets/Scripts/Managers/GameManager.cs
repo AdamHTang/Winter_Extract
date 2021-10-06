@@ -61,7 +61,6 @@ public class GameManager : MonoBehaviour
         CheckGameManagerIsInScene();
         minutes = (int)(timeRemaining / 60);
         seconds = (timeRemaining % 60);
-        currentLevelIndex = 0;
         
     } // End Awake()
 
@@ -113,7 +112,7 @@ public class GameManager : MonoBehaviour
         if (gm.GameOverText != null)
         {
             gm.GameOverText.gameObject.SetActive(true);
-
+            gm.Invoke("restartLevel", 3.0f);
         }
     } // End GameOver()
 
@@ -122,14 +121,13 @@ public class GameManager : MonoBehaviour
         if (gm.WinText != null)
         {
             gm.WinText.gameObject.SetActive(true);
-            gm.Invoke("newLevel", 5.0f);
+            gm.Invoke("newLevel", 3.0f);
         }
     }
 
     [System.Obsolete]
     void newLevel()
     {
-
         if (SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("Level_2")) || SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("You_Win")))
         {
             SceneManager.LoadScene(2);
@@ -139,6 +137,11 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(1);
         }
        
+    }
+
+    void restartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 
