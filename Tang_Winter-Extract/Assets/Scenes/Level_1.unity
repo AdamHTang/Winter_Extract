@@ -9383,6 +9383,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1198779999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1198780001}
+  - component: {fileID: 1198780000}
+  m_Layer: 0
+  m_Name: powerUpSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1198780000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198779999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a58284c9380c747a298537b6f4aa3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxRadius: 20
+  lowerInterval: 15
+  upperInterval: 25
+  fixedInterval: 20
+  randomInterval: 1
+  ObjToSpawn: {fileID: 5123678005763768048, guid: c8c47d4b898ccb84b818b54f9865f8bf,
+    type: 3}
+  spawnOnPlayer: 1
+--- !u!4 &1198780001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198779999}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.6061763, y: -32.96722, z: -0.91707045}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1511042336}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1214141991
 GameObject:
   m_ObjectHideFlags: 0
@@ -11876,6 +11927,7 @@ Transform:
   - {fileID: 1791650887}
   - {fileID: 1447058042}
   - {fileID: 790038776}
+  - {fileID: 1198780001}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13148,7 +13200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b57588e9bbdee284394a390ff76b8139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 5
+  timeRemaining: 119
   ScorePrefix: 'Score: '
   ScoreText: {fileID: 182046968}
   GameOverText: {fileID: 1891577818}

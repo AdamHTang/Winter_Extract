@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text TimerText = null;
     public GameObject Player = null;
     public static bool IsPlayerDead = false;
+    private int currentLevelIndex;
     
 
     private static int minutes;
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
         CheckGameManagerIsInScene();
         minutes = (int)(timeRemaining / 60);
         seconds = (timeRemaining % 60);
+        currentLevelIndex = 0;
         
     } // End Awake()
 
@@ -78,6 +80,7 @@ public class GameManager : MonoBehaviour
         else
         {
             HealthText.text = "+" + "0";
+            GameOver();
         }
 
 
@@ -96,7 +99,7 @@ public class GameManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (timeRemaining > 0 && Player.GetComponent<Health>().getHealthPoints() > 0.0f)
+        if (timeRemaining > 0 && GameObject.Find("Player") != null) 
         {
             timeRemaining -= Time.fixedDeltaTime;
             minutes = (int)(timeRemaining / 60);
@@ -126,6 +129,17 @@ public class GameManager : MonoBehaviour
     [System.Obsolete]
     void newLevel()
     {
-        SceneManager.LoadScene("Level_2");
+
+        if (SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("Level_2")) || SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("You_Win")))
+        {
+            SceneManager.LoadScene(2);
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
+       
     }
+
+
 }

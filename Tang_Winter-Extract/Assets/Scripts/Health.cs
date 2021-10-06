@@ -15,6 +15,7 @@ public class Health : MonoBehaviour
 {
     // Variables //
     [SerializeField] private float _HealthPoints = 100f;
+    private float maxHealth = 100f;
     public bool DestroyOnDeath = true;
     public GameObject DeathPrefab = null;
     Animator anim;
