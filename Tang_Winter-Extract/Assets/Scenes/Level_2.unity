@@ -1546,7 +1546,7 @@ MonoBehaviour:
   levelBounds:
     serializedVersion: 2
     x: -21.5
-    y: -22.5
+    y: -21.75
     width: 45
     height: 47
 --- !u!82 &188580820
